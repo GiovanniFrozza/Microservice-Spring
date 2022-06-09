@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.devsuperior</groupId>
-	<artifactId>hr-worker</artifactId>
+	<artifactId>hr-payroll</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>hr-worker</name>
 	<description>Worker Microservice</description>
@@ -49,6 +49,12 @@
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-openfeign</artifactId>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-actuator -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
 		</dependency>
 
 	</dependencies>

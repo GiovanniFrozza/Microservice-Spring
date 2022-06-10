@@ -30,10 +30,15 @@ public class WorkerResource {
     //findById
     @GetMapping(value = "/findById/{id}")
     public ResponseEntity<Worker> findById(@PathVariable Long id) {
-        logger.info("PORT = " + environment.getProperty("local.server.port"));
+        try {
+            logger.info("PORT = " + environment.getProperty("local.server.port"));
 
-        Worker worker = workerRepository.findById(id).get();
-        return ResponseEntity.ok().body(worker);
+            Worker worker = workerRepository.findById(id).get();
+            return ResponseEntity.ok().body(worker);
+        } catch (Exception e) {
+            throw new RuntimeException("Worker not found");
+        }
+
     }
 
 }
